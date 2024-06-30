@@ -5,9 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Page</title>
     <style>
-        html, body {
+ html, body {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        *, *::before, *::after {
+            box-sizing: inherit;
         }
         nav {
             background-color: #333; /* Background color of main navigation */
@@ -25,6 +31,7 @@
         nav > ul {
             background-color: #333; /* Background color of main navigation */
             display: flex;
+            flex-wrap: wrap; /* Allow items to wrap */
         }
 
         nav > ul > li {
@@ -65,24 +72,25 @@
         }
 
         .container-upper {
-            font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
+            height: auto; /* Adjust height to fit content */
+            padding: 20px; /* Add padding for better spacing on small screens */
         }
         .container {
             display: flex;
-            width: 80%;
+            flex-direction: column; /* Default to column for small screens */
+            width: 100%;
             max-width: 1200px;
             border: 1px solid #ccc;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-sizing: border-box;
         }
-        .contact-info {
-            flex: 1;
-            margin-right: 20px;
+        .contact-info, .form-container {
+            margin-bottom: 20px; /* Add margin between sections */
+            width: 100%; /* Ensure full width for small screens */
         }
         .contact-info h2 {
             margin-bottom: 20px;
@@ -98,9 +106,6 @@
             height: 100px;
             margin-right: 10px;
         }
-        .form-container {
-            flex: 1;
-        }
         .form-container form {
             display: flex;
             flex-direction: column;
@@ -114,6 +119,8 @@
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            width: 100%; /* Ensure inputs take full width */
+            box-sizing: border-box;
         }
         .form-container form button {
             padding: 10px 15px;
@@ -122,6 +129,23 @@
             background-color: #007BFF;
             color: #fff;
             cursor: pointer;
+            width: 100%; /* Ensure button takes full width */
+            box-sizing: border-box;
+        }
+
+        /* Media Queries */
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row; /* Row layout for medium to large screens */
+            }
+            .contact-info, .form-container {
+                flex: 1;
+                margin-bottom: 0; /* Remove margin for side-by-side layout */
+                width: auto; /* Reset width for larger screens */
+            }
+            .contact-info {
+                margin-right: 20px; /* Add spacing between columns */
+            }
         }
     </style>
 </head>
@@ -152,9 +176,9 @@
                 <p><strong>Email:</strong> kingexcel@163.com</p>
                 <div class="qr-codes">
                     <p><strong>WhatsApp:</strong></p>
-                    <img src="whatsapp_qr.png" alt="WhatsApp QR Code">
+                    <img src="../img/whatsapp.jpg" alt="WhatsApp QR Code">
                     <p><strong>WeChat:</strong></p>
-                    <img src="wechat_qr.png" alt="WeChat QR Code">
+                    <img src="../img/wechat.jpg" alt="WeChat QR Code">
                 </div>
             </div>
             <div class="form-container">
