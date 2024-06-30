@@ -1,0 +1,119 @@
+/* Reset some default styles for better consistency */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f0f0;
+}
+
+/* .container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+    text-align: center;
+} */
+
+nav {
+    background-color: #333; /* Background color of main navigation */
+    display: flex;
+    justify-content: center; /* Center align items horizontally */
+}
+/* Resetting default list styles */
+nav ul, nav ul ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling the main navigation */
+nav > ul {
+    background-color: #333; /* Background color of main navigation */
+    display: flex;
+}
+
+nav > ul > li {
+    position: relative;
+}
+
+nav > ul > li > a {
+    display: block;
+    padding: 12px 20px; /* Adjust padding as needed */
+    color: #fff; /* Text color */
+    text-decoration: none;
+}
+
+nav > ul > li:hover > ul {
+    display: block;
+}
+
+/* Styling the dropdown menu */
+nav > ul > li > ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444; /* Background color of dropdown menu */
+    min-width: 200px; /* Adjust width as needed */
+    z-index: 1; /* Ensure dropdown is above other content */
+}
+
+nav > ul > li > ul > li > a {
+    display: block;
+    padding: 10px 15px; /* Adjust padding as needed */
+    color: #fff; /* Text color */
+    text-decoration: none;
+}
+
+nav > ul > li > ul > li > a:hover {
+    background-color: #555; /* Background color on hover */
+}
+
+
+.about, .services, .footer {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.about h2, .services h2, .footer h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.8;
+}
+
+.services ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.services ul li {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.footer p {
+    font-size: 18px;
+    color: #666;
+}
