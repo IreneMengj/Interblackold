@@ -5,7 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Page</title>
     <style>
-        body {
+        nav {
+            background-color: #333; /* Background color of main navigation */
+            display: flex;
+            justify-content: center; /* Center align items horizontally */
+        }
+        /* Resetting default list styles */
+        nav ul, nav ul ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Styling the main navigation */
+        nav > ul {
+            background-color: #333; /* Background color of main navigation */
+            display: flex;
+        }
+
+        nav > ul > li {
+            position: relative;
+        }
+
+        nav > ul > li > a {
+            display: block;
+            padding: 12px 20px; /* Adjust padding as needed */
+            color: #fff; /* Text color */
+            text-decoration: none;
+        }
+
+        nav > ul > li:hover > ul {
+            display: block;
+        }
+
+        /* Styling the dropdown menu */
+        nav > ul > li > ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #444; /* Background color of dropdown menu */
+            min-width: 200px; /* Adjust width as needed */
+            z-index: 1; /* Ensure dropdown is above other content */
+        }
+
+        nav > ul > li > ul > li > a {
+            display: block;
+            padding: 10px 15px; /* Adjust padding as needed */
+            color: #fff; /* Text color */
+            text-decoration: none;
+        }
+
+        nav > ul > li > ul > li > a:hover {
+            background-color: #555; /* Background color on hover */
+        }
+
+        .container-upper {
             font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
@@ -67,39 +122,57 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="contact-info">
-            <h2>Contact Information</h2>
-            <p><strong>Name:</strong> Aaron Wang</p>
-            <p><strong>Phone (China):</strong> +8618701355853</p>
-            <p><strong>Phone (German):</strong> +4917656765568</p>
-            <p><strong>Email:</strong> kingexcel@163.com</p>
-            <div class="qr-codes">
-                <p><strong>WhatsApp:</strong></p>
-                <img src="whatsapp_qr.png" alt="WhatsApp QR Code">
-                <p><strong>WeChat:</strong></p>
-                <img src="wechat_qr.png" alt="WeChat QR Code">
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li>
+                <a href="#">Product</a>
+                <ul>
+                    <li><a href="#">Petroleum & Bitumen</a></li>
+                    <li><a href="#">Grain & Oil</a></li>
+                    <li><a href="#">Refractories</a></li>
+                    <li><a href="#">Animal Viscera</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Contact</a></li>
+
+        </ul>
+    </nav>
+    <div class="container-upper"> 
+        <div class="container"> 
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                <p><strong>Name:</strong> Aaron Wang</p>
+                <p><strong>Phone (China):</strong> +8618701355853</p>
+                <p><strong>Phone (German):</strong> +4917656765568</p>
+                <p><strong>Email:</strong> kingexcel@163.com</p>
+                <div class="qr-codes">
+                    <p><strong>WhatsApp:</strong></p>
+                    <img src="whatsapp_qr.png" alt="WhatsApp QR Code">
+                    <p><strong>WeChat:</strong></p>
+                    <img src="wechat_qr.png" alt="WeChat QR Code">
+                </div>
             </div>
-        </div>
-        <div class="form-container">
-            <form>
-                <label for="message">留言板</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-                
-                <label for="name">姓名</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="phone">手机号</label>
-                <input type="tel" id="phone" name="phone" required>
-                
-                <label for="email">邮箱</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="captcha">验证码</label>
-                <input type="text" id="captcha" name="captcha" required>
-                
-                <button type="submit">提交</button>
-            </form>
+            <div class="form-container">
+                <form>
+                    <label for="message">留言板</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                    
+                    <label for="name">姓名</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="phone">手机号</label>
+                    <input type="tel" id="phone" name="phone" required>
+                    
+                    <label for="email">邮箱</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="captcha">验证码</label>
+                    <input type="text" id="captcha" name="captcha" required>
+                    
+                    <button type="submit">提交</button>
+                </form>
+            </div>
         </div>
     </div>
 </body>
