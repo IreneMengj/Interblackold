@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+/* Navigation styling */
+nav {
+    background-color: #333; /* Background color of main navigation */
+    display: flex;
+    justify-content: center; /* Center align items horizontally */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Resetting default list styles */
+nav ul, nav ul ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling the main navigation */
+nav > ul {
+    background-color: #333; /* Background color of main navigation */
+    display: flex;
+}
+
+nav > ul > li {
+    position: relative;
+}
+
+nav > ul > li > a {
+    display: block;
+    padding: 12px 20px; /* Adjust padding as needed */
+    color: #fff; /* Text color */
+    text-decoration: none;
+}
+
+nav > ul > li:hover > ul {
+    display: block;
+}
+
+/* Styling the dropdown menu */
+nav > ul > li > ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444; /* Background color of dropdown menu */
+    min-width: 200px; /* Adjust width as needed */
+    z-index: 1; /* Ensure dropdown is above other content */
+}
+
+nav > ul > li > ul > li > a {
+    display: block;
+    padding: 10px 15px; /* Adjust padding as needed */
+    color: #fff; /* Text color */
+    text-decoration: none;
+}
+
+nav > ul > li > ul > li > a:hover {
+    background-color: #555; /* Background color on hover */
+}
+
+.container-upper {
+    padding: 2em;
+    margin-top: 30px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: space-between;
+}
+
+.category-container {
+    margin-bottom: 2em;
+}
+
+.category {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: space-between;
+}
+
+
+.product {
+    flex: 1 1 calc(50% - 2em); /* 每行两个产品 */
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.product img {
+    width: 100%;
+    height: 200px; /* 固定高度 */
+    object-fit: cover; /* 保持图片纵横比并裁剪以填充 */
+}
+
+.product .description {
+    padding: 1em;
+}
+
+.product .description h2 {
+    margin-top: 0;
+}
+
+.product .description p {
+    color: #666;
+}
+
+.product:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .product {
+        flex: 1 1 100%;
+    }
+}

@@ -1,0 +1,144 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+nav {
+    background-color: #333; /* Background color of main navigation */
+    display: flex;
+    justify-content: center; /* Center align items horizontally */
+}
+/* Resetting default list styles */
+nav ul, nav ul ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling the main navigation */
+nav > ul {
+    background-color: #333; /* Background color of main navigation */
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap */
+}
+
+nav > ul > li {
+    position: relative;
+}
+
+nav > ul > li > a {
+    display: block;
+    padding: 12px 20px; /* Adjust padding as needed */
+    color: #fff; /* Text color */
+    text-decoration: none;
+}
+
+nav > ul > li:hover > ul {
+    display: block;
+}
+
+/* Styling the dropdown menu */
+nav > ul > li > ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444; /* Background color of dropdown menu */
+    min-width: 200px; /* Adjust width as needed */
+    z-index: 1; /* Ensure dropdown is above other content */
+}
+
+nav > ul > li > ul > li > a {
+    display: block;
+    padding: 10px 15px; /* Adjust padding as needed */
+    color: #fff; /* Text color */
+    text-decoration: none;
+}
+
+nav > ul > li > ul > li > a:hover {
+    background-color: #555; /* Background color on hover */
+}
+
+.container-upper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto; /* Adjust height to fit content */
+    padding: 20px; /* Add padding for better spacing on small screens */
+}
+.container {
+    display: flex;
+    flex-direction: column; /* Default to column for small screens */
+    width: 100%;
+    max-width: 1200px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+}
+.contact-info, .form-container {
+    margin-bottom: 20px; /* Add margin between sections */
+    width: 100%; /* Ensure full width for small screens */
+}
+.contact-info h2 {
+    margin-bottom: 20px;
+}
+.contact-info p {
+    margin: 10px 0;
+}
+.qr-codes {
+    margin-top: 20px;
+}
+.qr-codes img {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+}
+.form-container form {
+    display: flex;
+    flex-direction: column;
+}
+.form-container form label {
+    margin-bottom: 5px;
+}
+.form-container form input, 
+.form-container form textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%; /* Ensure inputs take full width */
+    box-sizing: border-box;
+}
+.form-container form button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+    width: 100%; /* Ensure button takes full width */
+    box-sizing: border-box;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row; /* Row layout for medium to large screens */
+    }
+    .contact-info, .form-container {
+        flex: 1;
+        margin-bottom: 0; /* Remove margin for side-by-side layout */
+        width: auto; /* Reset width for larger screens */
+    }
+    .contact-info {
+        margin-right: 20px; /* Add spacing between columns */
+    }
+}
