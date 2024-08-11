@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apple Homepage</title>
     <link rel="stylesheet" href="./css/index.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
@@ -188,6 +190,14 @@
             <p>&copy; 2024 Apple Inc. All rights reserved.</p>
         </div>
     </footer>
+    <!-- Footer menu for mobile -->
+    <div class="footer-menu">
+        <a href="#" title="Home"><i class="fas fa-home"></i></a>
+        <a href="./html/LearnMore.html" title="About Us"><i class="fas fa-info-circle"></i></a>
+        <a href="./html/contact.html" title="Contact Us"><i class="fas fa-envelope"></i></a>
+        <a href="#" title="Products"><i class="fas fa-box"></i></a>
+    </div>
+
 
     <script>
         function toggleText () {
@@ -236,7 +246,26 @@
         document.addEventListener('DOMContentLoaded', () => {
             showSlide(currentIndex)
             autoPlay()
+        })
+
+        let lastScrollTop = 0 // 用于保存上次滚动位置
+
+        window.addEventListener("scroll", function () {
+            let st = window.pageYOffset || document.documentElement.scrollTop // 当前滚动位置
+            const footerMenu = document.querySelector('.footer-menu')
+
+            if (st > lastScrollTop) {
+                // 当向下滚动时，隐藏菜单
+                footerMenu.classList.remove('show')
+            } else {
+                // 当向上滚动时，显示菜单
+                footerMenu.classList.add('show')
+            }
+
+            // 更新最后滚动位置
+            lastScrollTop = st <= 0 ? 0 : st // 防止负值
         });
+
     </script>
 </body>
 
