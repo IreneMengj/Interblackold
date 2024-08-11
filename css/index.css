@@ -163,6 +163,49 @@ nav > ul > li > ul > li > a:hover {
   background-color: #007bff;
 }
 
+/* About Us Section */
+#about {
+  padding: 50px 30px;
+  background-color: #f9f9f9; /* Light background color for a subtle look */
+  text-align: center;
+}
+
+#about .container {
+  max-width: 1000px; /* Adjusted maximum width for better alignment */
+  margin: 0 auto; /* Center align the container */
+  padding: 0 20px; /* Add some padding for smaller screens */
+}
+
+#about h2 {
+  font-size: 36px;
+  color: #333; /* Dark color for the heading */
+  margin-bottom: 20px;
+}
+
+#about p {
+  font-size: 18px;
+  color: #666; /* Soft color for the text */
+  line-height: 1.6;
+  margin-bottom: 20px; /* Add spacing between paragraphs */
+  text-align: left; /* Align text to the left for better readability */
+  max-width: 800px; /* Limit the width of the text for better readability */
+  margin: 0 auto; /* Center align the text block */
+  overflow: hidden; /* Hide overflow text */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Show only three lines */
+  -webkit-box-orient: vertical;
+}
+
+#about .show-more {
+  color: #007bff; /* Color for the show more link */
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#about .show-more:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
 /* 产品展示区样式 */
 .products-section {
   padding: 50px 20px;
@@ -224,9 +267,79 @@ nav > ul > li > ul > li > a:hover {
   }
 }
 
+/* Case Studies Section */
+.case-studies {
+  padding: 50px 30px;
+  text-align: center;
+  background-color: #f9f9f9; /* Subtle background color to avoid a stark contrast */
+}
+
+.case-studies h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.case-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Ensure items wrap on smaller screens */
+}
+
+.case-item {
+  display: flex;
+  align-items: center;
+  background-color: #fff; /* Background color for individual case items */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: calc(50% - 20px); /* Two items per row with gap */
+  margin: 10px 0;
+}
+
+.case-item img {
+  width: 50%; /* Image takes up half of the case item */
+  height: auto;
+}
+
+.case-description {
+  padding: 20px;
+  width: 50%; /* Description takes up the other half of the case item */
+}
+
+.case-description h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #007bff; /* Color to highlight headings */
+}
+
+.case-description p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .case-item {
+    flex-direction: column; /* Stack image and description vertically */
+    width: 100%; /* Full width for small screens */
+  }
+
+  .case-item img {
+    width: 100%; /* Image takes up full width */
+    height: auto;
+  }
+
+  .case-description {
+    width: 100%; /* Description takes up full width */
+  }
+}
+
 /* 优势板块样式 */
 .advantages-section {
-  padding: 50px 20px;
+  padding: 50px 30px;
+  padding-bottom: 100px;
   text-align: center;
   background-color: #f0f0f0; /* 背景色区分产品板块 */
 }
