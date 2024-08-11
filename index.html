@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apple Homepage</title>
     <link rel="stylesheet" href="./css/index.css">
 </head>
+
 <body>
     <header>
         <nav>
             <ul>
+                <li><a href="#"><img src="path/to/logo.png" alt="Logo" class="logo"></a></li> <!-- Logo 占位符 -->
                 <li><a href="#">Home</a></li>
                 <li>
-                    <a href="./html/products.html">Product</a>
+                    <a href="./html/products.html">Product</a> <!-- 移除直接的符号添加 -->
                     <ul>
                         <li><a href="#">Petroleum & Bitumen</a></li>
                         <li><a href="#">Grain & Oil</a></li>
@@ -21,33 +24,150 @@
                     </ul>
                 </li>
                 <li><a href="./html/contact.html">Contact</a></li>
-   
             </ul>
         </nav>
-        <div class="hero">
-            <img src="./img/Naihuo.jpg" alt="bitumen">
-            <h1>Welcome to Interblack</h1>
-            <p>Move products, satisfy demands.</p>
-            <a href="./html/LearnMore.html" class="btn">Learn more</a>
+
+
+        <div class="hero-slider">
+            <div class="slides">
+                <div class="slide">
+                    <img src="./img/lunbotu1.jpg" alt="bitumen 1">
+                    <h1>Welcome to Interblack</h1>
+                    <p>Move products, satisfy demands.</p>
+                    <a href="./html/LearnMore.html" class="btn">Learn more</a>
+                </div>
+                <div class="slide">
+                    <img src="./img/lunbotu2.jpg" alt="bitumen 2">
+                    <h1>Welcome to Interblack</h1>
+                    <p>Innovative solutions for a better future.</p>
+                    <a href="./html/LearnMore.html" class="btn">Learn more</a>
+                </div>
+                <div class="slide">
+                    <img src="./img/lunbotu1.jpg" alt="bitumen 3">
+                    <h1>Welcome to Interblack</h1>
+                    <p>Your trusted partner in business.</p>
+                    <a href="./html/LearnMore.html" class="btn">Learn more</a>
+                </div>
+            </div>
+            <div class="dots">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
         </div>
+
     </header>
-    <section class="features">
-        <h2>Crude Oil & Bitumen</h2>
-        <div class="product">
-            <img src="./img/bitumen.png" alt="bitumen">
-            <h3>Refractory Product</h3>
-            <p>Performance and portability, perfect for developers and creatives.</p>
-            <a href="#" class="btn">Buy now</a>
-        </div>
-        <div class="product">
-            <img src="iphone.jpg" alt="iPhone">
-            <h3>iPhone 13</h3>
-            <p>The ultimate iPhone experience with the best camera and performance.</p>
-            <a href="#" class="btn">Buy now</a>
+    <section class="products-section">
+        <h2>Products</h2>
+        <div class="products-grid">
+            <div class="product-item">
+                <img src="./img/bitumen.jpg" alt="Petroleum">
+                <h3>Petroleum</h3>
+            </div>
+            <div class="product-item">
+                <img src="./img/bitumen.jpg" alt="Bitumen">
+                <h3>Bitumen</h3>
+            </div>
+            <div class="product-item">
+                <img src="./img/bitumen.jpg" alt="Grain">
+                <h3>Grain</h3>
+            </div>
+            <div class="product-item">
+                <img src="./img/bitumen.jpg" alt="Oil">
+                <h3>Oil</h3>
+            </div>
+            <div class="product-item">
+                <img src="./img/bitumen.jpg" alt="Refractories">
+                <h3>Refractories</h3>
+            </div>
+            <div class="product-item">
+                <img src="./img/bitumen.jpg" alt="Animal Viscera">
+                <h3>Animal Viscera</h3>
+            </div>
         </div>
     </section>
+
+    <section class="advantages-section">
+        <h2>Our Advantages</h2>
+        <div class="advantages-grid">
+            <div class="advantage-item light-blue">
+                <h3>Quality Assurance</h3>
+                <p>We adhere to the highest standards of quality control to ensure that our products meet industry
+                    expectations.</p>
+            </div>
+            <div class="advantage-item dark-blue">
+                <h3>Global Reach</h3>
+                <p>Our extensive network allows us to distribute products worldwide, reaching markets across the globe
+                    efficiently.</p>
+            </div>
+            <div class="advantage-item light-blue">
+                <h3>Innovative Solutions</h3>
+                <p>We are at the forefront of innovation, constantly developing new solutions to meet emerging market
+                    demands.</p>
+            </div>
+            <div class="advantage-item dark-blue">
+                <h3>Customer Support</h3>
+                <p>Our dedicated support team is available 24/7 to assist with any inquiries or issues, ensuring a
+                    seamless experience.</p>
+            </div>
+        </div>
+    </section>
+
+
     <footer>
-        <p>&copy; 2024 Apple Inc. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="path/to/logo.png" alt="Company Logo">
+            </div>
+            <div class="footer-links">
+                <a href="#">Home</a>
+                <a href="./html/LearnMore.html">About us</a>
+                <a href="./html/contact.html">Contact Us</a>
+            </div>
+            <div class="footer-socials">
+                <a href="#" class="social-icon"><img src="../img/whatsapp.jpg" alt="WhatsApp QR Code"></a>
+                <a href="#" class="social-icon"><img src="../img/wechat.jpg" alt="WeChat QR Code"></a>
+            </div>
+            <p>&copy; 2024 Apple Inc. All rights reserved.</p>
+        </div>
     </footer>
+
+    <script>
+        let currentIndex = 0
+        const slides = document.querySelectorAll('.slide')
+        const dots = document.querySelectorAll('.dot')
+
+        function showSlide (index) {
+            if (index >= slides.length) {
+                currentIndex = 0
+            } else if (index < 0) {
+                currentIndex = slides.length - 1
+            } else {
+                currentIndex = index
+            }
+
+            document.querySelector('.slides').style.transform = `translateX(-${currentIndex * 100}%)`
+            dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex))
+        }
+
+        function currentSlide (index) {
+            showSlide(index - 1)
+        }
+
+        function nextSlide () {
+            showSlide(currentIndex + 1)
+        }
+
+        function autoPlay () {
+            nextSlide()
+            setTimeout(autoPlay, 5000) // Auto-play every 5 seconds
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showSlide(currentIndex)
+            autoPlay()
+        });
+    </script>
 </body>
+
 </html>
