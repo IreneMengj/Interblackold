@@ -57,17 +57,13 @@ nav .logo {
   margin-right: 20px; /* Space between logo and next item */
 }
 
-/* Only add the arrow for list items that have a dropdown */
-nav > ul > li > ul {
-  display: none;
-}
-
 nav > ul > li:hover > ul {
   display: block;
 }
 
 /* Styling the dropdown menu */
 nav > ul > li > ul {
+  display: none;
   position: absolute;
   top: 100%;
   left: 0;

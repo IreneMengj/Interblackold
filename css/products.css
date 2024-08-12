@@ -17,6 +17,7 @@ nav {
   top: 0;
   width: 100%;
   z-index: 1000;
+  padding: 0 20px; /* Add padding for additional width */
 }
 
 /* Resetting default list styles */
@@ -31,10 +32,12 @@ nav ul ul {
 nav > ul {
   background-color: #333; /* Background color of main navigation */
   display: flex;
+  align-items: center; /* Align items vertically */
 }
 
 nav > ul > li {
   position: relative;
+  margin-right: 20px; /* Add space between items */
 }
 
 nav > ul > li > a {
@@ -42,6 +45,14 @@ nav > ul > li > a {
   padding: 12px 20px; /* Adjust padding as needed */
   color: #fff; /* Text color */
   text-decoration: none;
+  position: relative;
+}
+
+/* Logo styling */
+nav .logo {
+  height: 40px; /* Adjust height as needed */
+  width: auto; /* Maintain aspect ratio */
+  margin-right: 20px; /* Space between logo and next item */
 }
 
 nav > ul > li:hover > ul {
