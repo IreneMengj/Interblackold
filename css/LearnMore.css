@@ -1,110 +1,180 @@
 /* Reset some default styles for better consistency */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 /* Basic styling */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f0f0f0;
 }
 
 .container {
-    width: 80%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-} 
-
-
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
 nav {
-    background-color: #333; /* Background color of main navigation */
-    display: flex;
-    justify-content: center; /* Center align items horizontally */
+  background-color: #333; /* Background color of main navigation */
+  display: flex;
+  justify-content: center; /* Center align items horizontally */
 }
 /* Resetting default list styles */
-nav ul, nav ul ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+nav ul,
+nav ul ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 /* Styling the main navigation */
 nav > ul {
-    background-color: #333; /* Background color of main navigation */
-    display: flex;
+  background-color: #333; /* Background color of main navigation */
+  display: flex;
 }
 
 nav > ul > li {
-    position: relative;
+  position: relative;
 }
 
 nav > ul > li > a {
-    display: block;
-    padding: 12px 20px; /* Adjust padding as needed */
-    color: #fff; /* Text color */
-    text-decoration: none;
+  display: block;
+  padding: 12px 20px; /* Adjust padding as needed */
+  color: #fff; /* Text color */
+  text-decoration: none;
 }
 
 nav > ul > li:hover > ul {
-    display: block;
+  display: block;
 }
 
 /* Styling the dropdown menu */
 nav > ul > li > ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #444; /* Background color of dropdown menu */
-    min-width: 200px; /* Adjust width as needed */
-    z-index: 1; /* Ensure dropdown is above other content */
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #444; /* Background color of dropdown menu */
+  min-width: 200px; /* Adjust width as needed */
+  z-index: 1; /* Ensure dropdown is above other content */
 }
 
 nav > ul > li > ul > li > a {
-    display: block;
-    padding: 10px 15px; /* Adjust padding as needed */
-    color: #fff; /* Text color */
-    text-decoration: none;
+  display: block;
+  padding: 10px 15px; /* Adjust padding as needed */
+  color: #fff; /* Text color */
+  text-decoration: none;
 }
 
 nav > ul > li > ul > li > a:hover {
-    background-color: #555; /* Background color on hover */
+  background-color: #555; /* Background color on hover */
 }
 
-
-.about, .services, .footer {
-    padding: 40px 0;
-    text-align: center;
+.about,
+.services,
+.footer {
+  padding: 40px 0;
+  text-align: center;
 }
 
-.about h2, .services h2, .footer h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
+.about h2,
+.services h2,
+.footer h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
 }
 
 .about p {
-    font-size: 18px;
-    color: #666;
-    line-height: 1.8;
-    text-align: left;
+  font-size: 18px;
+  color: #666;
+  line-height: 1.8;
+  text-align: left;
 }
 
 .services ul {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 .services ul li {
-    font-size: 20px;
-    margin-bottom: 10px;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 
 .footer p {
-    font-size: 18px;
-    color: #666;
+  font-size: 18px;
+  color: #666;
+}
+
+/* Base styles for the footer menu */
+.footer-menu {
+  display: none; /* Hidden by default */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333; /* Background color of footer menu */
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+/* Links inside the footer menu */
+.footer-menu a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: inline-block;
+  font-size: 24px; /* Adjust the icon size if needed */
+  line-height: 24px; /* Adjust the line height for vertical centering */
+  position: relative; /* For tooltips positioning */
+}
+
+/* Icons inside the footer menu */
+.footer-menu i {
+  font-size: 24px; /* Adjust icon size */
+}
+
+/* Tooltip styles */
+.footer-menu a::after {
+  content: attr(title); /* Tooltip text */
+  position: absolute;
+  bottom: 100%; /* Position above the button */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333; /* Background color of tooltip */
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  font-size: 14px; /* Tooltip text size */
+}
+
+/* Show tooltip on hover */
+.footer-menu a:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Show footer menu on mobile devices */
+@media (max-width: 768px) {
+  .footer-menu {
+    display: block;
+  }
+}
+
+/* Adjust styles for footer menu when visible */
+@media (min-width: 769px) {
+  .footer-menu {
+    display: none;
+  }
 }
