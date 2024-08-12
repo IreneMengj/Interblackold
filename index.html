@@ -212,7 +212,7 @@
                 link.textContent = "Show More"
             }
         }
-
+        //轮播图效果
         let currentIndex = 0
         const slides = document.querySelectorAll('.slide')
         const dots = document.querySelectorAll('.dot')
@@ -247,25 +247,6 @@
             showSlide(currentIndex)
             autoPlay()
         })
-
-        let lastScrollTop = 0 // 用于保存上次滚动位置
-
-        window.addEventListener("scroll", function () {
-            let st = window.pageYOffset || document.documentElement.scrollTop // 当前滚动位置
-            const footerMenu = document.querySelector('.footer-menu')
-
-            if (st > lastScrollTop) {
-                // 当向下滚动时，隐藏菜单
-                footerMenu.classList.remove('show')
-            } else {
-                // 当向上滚动时，显示菜单
-                footerMenu.classList.add('show')
-            }
-
-            // 更新最后滚动位置
-            lastScrollTop = st <= 0 ? 0 : st // 防止负值
-        });
-
     </script>
 </body>
 
