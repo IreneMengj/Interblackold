@@ -1,0 +1,249 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+/* Navigation styling */
+nav {
+  background-color: #333; /* Background color of main navigation */
+  display: flex;
+  justify-content: center; /* Center align items horizontally */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 0 20px; /* Add padding for additional width */
+}
+
+/* Resetting default list styles */
+nav ul,
+nav ul ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Styling the main navigation */
+nav > ul {
+  background-color: #333; /* Background color of main navigation */
+  display: flex;
+  align-items: center; /* Align items vertically */
+}
+
+nav > ul > li {
+  position: relative;
+  margin-right: 20px; /* Add space between items */
+}
+
+nav > ul > li > a {
+  display: block;
+  padding: 12px 20px; /* Adjust padding as needed */
+  color: #fff; /* Text color */
+  text-decoration: none;
+  position: relative;
+}
+
+/* Logo styling */
+nav .logo {
+  height: 40px; /* Adjust height as needed */
+  width: auto; /* Maintain aspect ratio */
+  margin-right: 20px; /* Space between logo and next item */
+}
+
+nav > ul > li:hover > ul {
+  display: block;
+}
+
+/* Styling the dropdown menu */
+nav > ul > li > ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #444; /* Background color of dropdown menu */
+  min-width: 200px; /* Adjust width as needed */
+  z-index: 1; /* Ensure dropdown is above other content */
+}
+
+nav > ul > li > ul > li > a {
+  display: block;
+  padding: 10px 15px; /* Adjust padding as needed */
+  color: #fff; /* Text color */
+  text-decoration: none;
+}
+
+nav > ul > li > ul > li > a:hover {
+  background-color: #555; /* Background color on hover */
+}
+
+.container-upper {
+  padding: 2em;
+  margin-top: 30px;
+  background-color: #f4f4f4;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: center;
+}
+
+.category-container {
+  margin-bottom: 4em;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.category-container h2 {
+  text-align: center;
+  font-size: 2em;
+  font-weight: 700;
+  margin-bottom: 1em;
+  color: #333;
+}
+
+.category {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: space-between;
+}
+
+.product {
+  flex: 1 1 calc(50% - 2em); /* 每行两个产品 */
+  background-color: #fff;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.product img {
+  width: 100%;
+  height: 300px; /* 固定高度 */
+  object-fit: cover; /* 保持图片纵横比并裁剪以填充 */
+  transition: transform 0.3s;
+}
+
+.product:hover img {
+  transform: scale(1.05);
+}
+
+.product .description {
+  padding: 2em;
+  text-align: center;
+}
+
+.product .description h2 {
+  margin-top: 0;
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #333;
+}
+
+.product .description p {
+  color: #666;
+  font-size: 1em;
+  margin-bottom: 1.5em;
+}
+
+.product .description button {
+  padding: 0.8em 1.5em;
+  background-color: #007aff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.product .description button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .product {
+    flex: 1 1 100%;
+  }
+}
+
+/* Base styles for the footer menu */
+.footer-menu {
+  display: none; /* Hidden by default */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333; /* Background color of footer menu */
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Links inside the footer menu */
+.footer-menu a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 24px; /* Adjust the icon size if needed */
+  line-height: 24px; /* Adjust the line height for vertical centering */
+  position: relative; /* For tooltips positioning */
+}
+
+/* Icons inside the footer menu */
+.footer-menu i {
+  font-size: 24px; /* Adjust icon size */
+}
+
+/* Tooltip styles */
+.footer-menu a::after {
+  content: attr(title); /* Tooltip text */
+  position: absolute;
+  bottom: 100%; /* Position above the button */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333; /* Background color of tooltip */
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  font-size: 14px; /* Tooltip text size */
+}
+
+/* Show tooltip on hover */
+.footer-menu a:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Show footer menu on mobile devices */
+@media (max-width: 768px) {
+  .footer-menu {
+    display: flex;
+  }
+}
+
+/* Adjust styles for footer menu when visible */
+@media (min-width: 769px) {
+  .footer-menu {
+    display: none;
+  }
+}

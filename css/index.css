@@ -1,0 +1,606 @@
+/* Reset some default styles for better consistency */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Basic styling */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+nav {
+  background-color: #333; /* Background color of main navigation */
+  display: flex;
+  justify-content: center; /* Center align items horizontally */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 0 20px; /* Add padding for additional width */
+}
+
+/* Resetting default list styles */
+nav ul,
+nav ul ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Styling the main navigation */
+nav > ul {
+  background-color: #333; /* Background color of main navigation */
+  display: flex;
+  align-items: center; /* Align items vertically */
+}
+
+nav > ul > li {
+  position: relative;
+  margin-right: 20px; /* Add space between items */
+}
+
+nav > ul > li > a {
+  display: block;
+  padding: 12px 20px; /* Adjust padding as needed */
+  color: #fff; /* Text color */
+  text-decoration: none;
+  position: relative;
+}
+
+/* Logo styling */
+nav .logo {
+  height: 40px; /* Adjust height as needed */
+  width: auto; /* Maintain aspect ratio */
+  margin-right: 20px; /* Space between logo and next item */
+}
+
+nav > ul > li:hover > ul {
+  display: block;
+}
+
+/* Styling the dropdown menu */
+nav > ul > li > ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #444; /* Background color of dropdown menu */
+  min-width: 200px; /* Adjust width as needed */
+  z-index: 1; /* Ensure dropdown is above other content */
+}
+
+nav > ul > li > ul > li > a {
+  display: block;
+  padding: 10px 15px; /* Adjust padding as needed */
+  color: #fff; /* Text color */
+  text-decoration: none;
+}
+
+nav > ul > li > ul > li > a:hover {
+  background-color: #555; /* Background color on hover */
+}
+
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.slide img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(2px);
+  z-index: 1;
+}
+
+.slide h1,
+.slide p,
+.slide .btn {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+}
+
+.slide .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 3;
+}
+
+.dot {
+  width: 15px;
+  height: 15px;
+  background-color: #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active,
+.dot:hover {
+  background-color: #007bff;
+}
+
+/* About Us Section */
+#about {
+  padding: 50px 30px;
+  background-color: #f9f9f9; /* Light background color for a subtle look */
+  text-align: center;
+}
+
+#about .container {
+  max-width: 1000px; /* Adjusted maximum width for better alignment */
+  margin: 0 auto; /* Center align the container */
+  padding: 0 20px; /* Add some padding for smaller screens */
+}
+
+#about h2 {
+  font-size: 36px;
+  color: #333; /* Dark color for the heading */
+  margin-bottom: 20px;
+}
+
+#about p {
+  font-size: 18px;
+  color: #666; /* Soft color for the text */
+  line-height: 1.6;
+  margin-bottom: 20px; /* Add spacing between paragraphs */
+  text-align: left; /* Align text to the left for better readability */
+  max-width: 800px; /* Limit the width of the text for better readability */
+  margin: 0 auto; /* Center align the text block */
+  overflow: hidden; /* Hide overflow text */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Show only three lines */
+  -webkit-box-orient: vertical;
+}
+
+#about .show-more {
+  color: #007bff; /* Color for the show more link */
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#about .show-more:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* 产品展示区样式 */
+.products-section {
+  padding: 50px 20px;
+  text-align: center;
+  margin-top: 20px; /* 与前面部分适当留白 */
+}
+
+.products-section h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #333; /* 字体颜色与整体风格一致 */
+}
+
+.products-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.product-item {
+  width: 30%; /* 三个产品每行 */
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.product-item img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  object-fit: cover; /* 确保图片填满整个框 */
+}
+
+.product-item h3 {
+  margin-top: 10px;
+  font-size: 24px;
+  color: #0288d1;
+}
+
+.product-item:hover img {
+  transform: scale(1.1); /* 鼠标悬停时放大图片 */
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .product-item {
+    width: 45%; /* 每行展示两个产品 */
+  }
+}
+
+@media (max-width: 480px) {
+  .product-item {
+    width: 100%; /* 每行展示一个产品 */
+  }
+
+  .products-section h2 {
+    font-size: 28px;
+  }
+}
+
+/* Case Studies Section */
+.case-studies {
+  padding: 50px 30px;
+  text-align: center;
+  background-color: #f9f9f9; /* Subtle background color to avoid a stark contrast */
+}
+
+.case-studies h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.case-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Ensure items wrap on smaller screens */
+}
+
+.case-item {
+  display: flex;
+  align-items: center;
+  background-color: #fff; /* Background color for individual case items */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: calc(50% - 20px); /* Two items per row with gap */
+  margin: 10px 0;
+}
+
+.case-item img {
+  width: 50%; /* Image takes up half of the case item */
+  height: auto;
+}
+
+.case-description {
+  padding: 20px;
+  width: 50%; /* Description takes up the other half of the case item */
+}
+
+.case-description h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #007bff; /* Color to highlight headings */
+}
+
+.case-description p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .case-item {
+    flex-direction: column; /* Stack image and description vertically */
+    width: 100%; /* Full width for small screens */
+  }
+
+  .case-item img {
+    width: 100%; /* Image takes up full width */
+    height: auto;
+  }
+
+  .case-description {
+    width: 100%; /* Description takes up full width */
+  }
+}
+
+/* 优势板块样式 */
+.advantages-section {
+  padding: 50px 30px;
+  padding-bottom: 100px;
+  text-align: center;
+  background-color: #f0f0f0; /* 背景色区分产品板块 */
+}
+
+.advantages-section h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.advantages-grid {
+  display: flex;
+  justify-content: space-between; /* 让四个项目分布在一行 */
+  gap: 20px;
+}
+
+.advantage-item {
+  flex: 1;
+  padding: 20px;
+  border-radius: 10px;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.advantage-item h3 {
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: #fff; /* 确保标题颜色清晰 */
+}
+
+.advantage-item p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* 颜色样式 */
+.advantage-item.light-blue {
+  background-color: #90caf9; /* 浅蓝色 */
+}
+
+.advantage-item.dark-blue {
+  background-color: #0288d1; /* 深蓝色 */
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .advantages-grid {
+    flex-direction: column;
+  }
+
+  .advantage-item {
+    margin-bottom: 20px;
+  }
+}
+
+.features {
+  padding: 50px 0;
+  text-align: center;
+  margin-top: 60px; /* Add margin to account for fixed nav */
+}
+
+.features h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.product {
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product img {
+  max-width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.product p {
+  color: #666;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Footer样式 */
+footer {
+  background-color: #000; /* 黑色背景 */
+  color: #fff; /* 白色文本 */
+  padding: 40px 20px; /* 上下左右的内边距 */
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1200px; /* 最大宽度 */
+  margin: 0 auto; /* 居中对齐 */
+}
+
+.footer-logo img {
+  width: 150px; /* Logo的宽度 */
+  margin-bottom: 20px; /* Logo与其他内容的间距 */
+}
+
+.footer-links {
+  margin-bottom: 20px; /* 链接与其他内容的间距 */
+}
+
+.footer-links a {
+  color: #fff; /* 链接的颜色 */
+  text-decoration: none;
+  margin: 0 15px; /* 链接的左右间距 */
+  font-size: 16px; /* 链接的字体大小 */
+}
+
+.footer-links a:hover {
+  text-decoration: underline; /* 鼠标悬停时的下划线 */
+}
+
+.footer-socials {
+  margin-bottom: 30px; /* 社交图标与其他内容的间距 */
+}
+
+.social-icon {
+  display: inline-block;
+  margin: 0 10px; /* 图标的左右间距 */
+}
+
+.social-icon img {
+  width: 50px; /* Adjust size as needed */
+  height: 50px; /* Adjust size as needed */
+  vertical-align: middle; /* Align with text */
+}
+
+.footer-content p {
+  margin-top: 20px; /* 页脚文本与其他内容的间距 */
+  font-size: 14px; /* 页脚文本的字体大小 */
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .footer-links a {
+    display: block; /* 链接在小屏幕上垂直显示 */
+    margin: 10px 0; /* 链接的上下间距 */
+  }
+
+  .social-icon {
+    margin: 0 5px; /* 图标在小屏幕上稍微缩小间距 */
+  }
+
+  .footer-logo img {
+    width: 120px; /* 小屏幕下Logo的宽度 */
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  .btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .features h2 {
+    font-size: 28px;
+  }
+
+  .product {
+    margin-bottom: 30px;
+  }
+}
+
+/* Base styles for the footer menu */
+.footer-menu {
+  display: none; /* Hidden by default */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333; /* Background color of footer menu */
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Links inside the footer menu */
+.footer-menu a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 24px; /* Adjust the icon size if needed */
+  line-height: 24px; /* Adjust the line height for vertical centering */
+  position: relative; /* For tooltips positioning */
+}
+
+/* Icons inside the footer menu */
+.footer-menu i {
+  font-size: 24px; /* Adjust icon size */
+}
+
+/* Tooltip styles */
+.footer-menu a::after {
+  content: attr(title); /* Tooltip text */
+  position: absolute;
+  bottom: 100%; /* Position above the button */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333; /* Background color of tooltip */
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  font-size: 14px; /* Tooltip text size */
+}
+
+/* Show tooltip on hover */
+.footer-menu a:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Show footer menu on mobile devices */
+@media (max-width: 768px) {
+  .footer-menu {
+    display: flex;
+  }
+}
+
+/* Adjust styles for footer menu when visible */
+@media (min-width: 769px) {
+  .footer-menu {
+    display: none;
+  }
+}
