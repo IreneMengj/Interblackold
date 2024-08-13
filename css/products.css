@@ -84,17 +84,28 @@ nav > ul > li > ul > li > a:hover {
 .container-upper {
   padding: 2em;
   margin-top: 30px;
+  background-color: #f4f4f4;
 }
 
 .container {
   display: flex;
   flex-wrap: wrap;
   gap: 2em;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .category-container {
-  margin-bottom: 2em;
+  margin-bottom: 4em;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.category-container h2 {
+  text-align: center;
+  font-size: 2em;
+  font-weight: 700;
+  margin-bottom: 1em;
+  color: #333;
 }
 
 .category {
@@ -106,34 +117,57 @@ nav > ul > li > ul > li > a:hover {
 
 .product {
   flex: 1 1 calc(50% - 2em); /* 每行两个产品 */
-  background-color: #f8f8f8;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  background-color: #fff;
+  border: none;
+  border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .product img {
   width: 100%;
-  height: 200px; /* 固定高度 */
+  height: 300px; /* 固定高度 */
   object-fit: cover; /* 保持图片纵横比并裁剪以填充 */
+  transition: transform 0.3s;
+}
+
+.product:hover img {
+  transform: scale(1.05);
 }
 
 .product .description {
-  padding: 1em;
+  padding: 2em;
+  text-align: center;
 }
 
 .product .description h2 {
   margin-top: 0;
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #333;
 }
 
 .product .description p {
   color: #666;
+  font-size: 1em;
+  margin-bottom: 1.5em;
 }
 
-.product:hover {
-  transform: scale(1.05);
+.product .description button {
+  padding: 0.8em 1.5em;
+  background-color: #007aff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.product .description button:hover {
+  background-color: #0056b3;
 }
 
 @media (max-width: 768px) {
