@@ -16,7 +16,7 @@
                 <li><img src="path/to/logo.png" alt="Logo" class="logo"></li>
                 <li><a href="../index.html">Home</a></li>
                 <li>
-                    <a href="./products.html">Product</a>
+                    <a href="./products.html" id="product-link">Product</a>
                     <ul>
                         <li><a href="#">Petroleum & Bitumen</a></li>
                         <li><a href="#">Grain & Oil</a></li>
@@ -73,6 +73,11 @@
             </div>
         </div>
     </div>
+    <script>
+        document.getElementById('product-link').addEventListener('click', function (event) {
+            window.location.href = './html/products.html'
+        });
+    </script>
 </body>
 
 </html>

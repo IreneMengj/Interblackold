@@ -17,7 +17,7 @@
                 <li><img src="path/to/logo.png" alt="Logo" class="logo"></li> <!-- Logo 占位符 -->
                 <li><a href="#">Home</a></li>
                 <li>
-                    <a href="./html/products.html">Product</a> <!-- 移除直接的符号添加 -->
+                    <a href="./html/products.html" id="product-link">Product</a>
                     <ul>
                         <li><a href="#">Petroleum & Bitumen</a></li>
                         <li><a href="#">Grain & Oil</a></li>
@@ -247,6 +247,10 @@
             showSlide(currentIndex)
             autoPlay()
         })
+
+        document.getElementById('product-link').addEventListener('click', function (event) {
+            window.location.href = './html/products.html'
+        });
     </script>
 </body>
 

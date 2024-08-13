@@ -16,7 +16,7 @@
                 <li><img src="path/to/logo.png" alt="Logo" class="logo"></li>
                 <li><a href="../index.html">Home</a></li>
                 <li>
-                    <a href="#">Product</a>
+                    <a href="#" id="product-link">Product</a>
                     <ul>
                         <li><a href="#petroleum-bitumen">Petroleum & Bitumen</a></li>
                         <li><a href="#grain-oil">Grain & Oil</a></li>
@@ -128,6 +128,11 @@
         <a href="#" title="Products"><i class="fas fa-box"></i></a>
         <a href="./contact.html" title="Contact Us"><i class="fas fa-envelope"></i></a>
     </div>
+    <script>
+        document.getElementById('product-link').addEventListener('click', function (event) {
+            window.location.href = './html/products.html'
+        });
+    </script>
 </body>
 
 </html>
