@@ -119,6 +119,8 @@ nav > ul > li > ul > li > a:hover {
   text-align: center;
   padding: 10px 0;
   z-index: 1000;
+  display: flex;
+  justify-content: space-around;
 }
 
 /* Links inside the footer menu */
@@ -126,7 +128,9 @@ nav > ul > li > ul > li > a:hover {
   color: #fff;
   text-decoration: none;
   padding: 10px 15px;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-size: 24px; /* Adjust the icon size if needed */
   line-height: 24px; /* Adjust the line height for vertical centering */
   position: relative; /* For tooltips positioning */
@@ -164,7 +168,7 @@ nav > ul > li > ul > li > a:hover {
 /* Show footer menu on mobile devices */
 @media (max-width: 768px) {
   .footer-menu {
-    display: block;
+    display: flex;
   }
 }
 
