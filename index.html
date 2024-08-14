@@ -8,27 +8,42 @@
     <link rel="stylesheet" href="./css/index.css">
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
+
 </head>
 
 <body>
     <header>
         <nav>
-            <ul>
-                <li><img src="path/to/logo.png" alt="Logo" class="logo"></li> <!-- Logo 占位符 -->
-                <li><a href="#">Home</a></li>
-                <li>
-                    <a href="./html/products.html" id="product-link">Product</a>
-                    <ul>
-                        <li><a href="#">Petroleum & Bitumen</a></li>
-                        <li><a href="#">Grain & Oil</a></li>
-                        <li><a href="#">Refractories</a></li>
-                        <li><a href="#">Animal Viscera</a></li>
-                    </ul>
-                </li>
-                <li><a href="./html/contact.html">Contact</a></li>
-            </ul>
+            <div class="nav-container">
+                <img src="path/to/logo.png" alt="Logo" class="logo">
+                <div class="hamburger-menu" id="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="#">Home</a></li>
+                    <li>
+                        <a href="./html/products.html" id="product-link">Product</a>
+                        <ul>
+                            <li><a href="#">Petroleum & Bitumen</a></li>
+                            <li><a href="#">Grain & Oil</a></li>
+                            <li><a href="#">Refractories</a></li>
+                            <li><a href="#">Animal Viscera</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="./html/contact.html">Contact</a></li>
+                    <li class="language-selector">
+                        <select id="language-select" onchange="changeLanguage(this.value)">
+                            <option value="en" data-icon="flag-icon-us" selected>EN</option>
+                            <option value="cn" data-icon="flag-icon-cn">CN</option>
+                            <option value="ru" data-icon="flag-icon-ru">RU</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
         </nav>
-
 
         <div class="hero-slider">
             <div class="slides">
@@ -270,7 +285,32 @@
 
         document.getElementById('product-link').addEventListener('click', function (event) {
             window.location.href = './html/products.html'
+        })
+
+        // 语言切换
+        document.getElementById('language-select').addEventListener('change', function () {
+            const selectedOption = this.options[this.selectedIndex]
+            const iconClass = selectedOption.getAttribute('data-icon')
+
+            this.className = iconClass // 设置下拉框的图标
+            changeLanguage(this.value) // 切换语言
+        })
+
+        // 初始加载时设置默认图标
+        document.addEventListener('DOMContentLoaded', function () {
+            const selectElement = document.getElementById('language-select')
+            const selectedOption = selectElement.options[selectElement.selectedIndex]
+            const iconClass = selectedOption.getAttribute('data-icon')
+
+            selectElement.className = iconClass
+        })
+        //控制汉堡菜单
+        document.getElementById('hamburger-menu').addEventListener('click', function () {
+            const navMenu = document.querySelector('nav ul')
+            navMenu.classList.toggle('show-menu')
         });
+
+
     </script>
 </body>
 
