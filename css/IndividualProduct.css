@@ -163,7 +163,7 @@ main {
 
   .product-description {
     width: 90%; /* Adjust width for mobile, making description take up more space */
-    text-align: center; /* Center the text for mobile layout */
+    text-align: left; /* Center the text for mobile layout */
   }
 }
 
