@@ -74,28 +74,6 @@
         document.getElementById('product-link').addEventListener('click', function (event) {
             window.location.href = './html/products.html'
         })
-
-        document.getElementById('contactForm').addEventListener('submit', function (event) {
-            event.preventDefault() // 阻止表单的默认提交行为
-
-            // 获取表单数据
-            var formData = new FormData(this)
-
-            // 使用fetch API进行异步提交
-            fetch('submit_form.php', {
-                method: 'POST',
-                body: formData
-            })
-                .then(response => response.text())
-                .then(data => {
-                    alert('Form submitted successfully!') // 这里你可以用更好的UI替代，比如弹出框
-                    console.log(data) // 你可以在控制台看到PHP返回的数据
-                })
-                .catch(error => {
-                    alert('There was a problem with your submission.')
-                    console.error('Error:', error)
-                })
-        });
     </script>
 </body>
 
