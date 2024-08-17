@@ -1,16 +1,20 @@
-<?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $message = htmlspecialchars($_POST['message']);
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $name = htmlspecialchars($_POST['name']);
   $phone = htmlspecialchars($_POST['phone']);
   $email = htmlspecialchars($_POST['email']);
-  $captcha = htmlspecialchars($_POST['captcha']);
+  $message = htmlspecialchars($_POST['message']);
+
+  // 这里你可以添加代码来处理数据，例如发送邮件或保存到数据库
   $to = "mengjiayu2021@gmail.com";
-  $subject = "Contact Form Submission from " . $name;
-  $body = "Message: $message\nName: $name\nPhone: $phone\nEmail: $email\nCaptcha: $captcha";
-  $headers = "From: " . $email;
+  $subject = "New Contact Form Submission";
+  $body = "Name: $name\nPhone: $phone\nEmail: $email\nMessage:\n$message";
+  $headers = "From: $email";
+
   if (mail($to, $subject, $body, $headers)) {
-    echo "Info successfully sent!";
+    echo "Message sent successfully!";
   } else {
-    echo "Info sending failed!";
+    echo "Failed to send message.";
   }
-} ?>
+}
+?>
