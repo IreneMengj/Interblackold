@@ -148,6 +148,23 @@ main {
   .footer-menu {
     display: flex;
   }
+
+  /* Adjust product-details layout for mobile */
+  .product-details {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-image {
+    width: 80%; /* Adjust width for mobile, making image take up more space */
+    margin-right: 0; /* Remove margin on right since it's now stacked */
+    margin-bottom: 20px; /* Add margin below the image for spacing */
+  }
+
+  .product-description {
+    width: 90%; /* Adjust width for mobile, making description take up more space */
+    text-align: center; /* Center the text for mobile layout */
+  }
 }
 
 /* Adjust styles for footer menu when visible */
