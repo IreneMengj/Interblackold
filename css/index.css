@@ -70,6 +70,7 @@ nav ul.nav-list li ul {
   left: 0;
   background-color: #444;
   min-width: 200px;
+  z-index: 1000;
 }
 
 nav ul.nav-list li:hover ul {
