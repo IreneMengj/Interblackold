@@ -27,10 +27,9 @@
                     <li>
                         <a href="./html/products.html" id="product-link">Product</a>
                         <ul>
-                            <li><a href="#">Petroleum & Bitumen</a></li>
-                            <li><a href="#">Grain & Oil</a></li>
-                            <li><a href="#">Refractories</a></li>
-                            <li><a href="#">Animal Viscera</a></li>
+                            <li><a href="./products.html#petroleum-bitumen">Refractory products</a></li>
+                            <li><a href="./products.html#grain-oil">Oil products</a></li>
+                            <li><a href="./products.html#refractories">Agricultural products</a></li>
                         </ul>
                     </li>
                     <li><a href="./html/contact.html">Contact</a></li>
@@ -326,11 +325,26 @@
 
             selectElement.className = iconClass
         })
+
         //控制汉堡菜单
-        document.getElementById('hamburger-menu').addEventListener('click', function () {
-            const navMenu = document.querySelector('nav ul')
-            navMenu.classList.toggle('show-menu')
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburgerMenu = document.getElementById('hamburger-menu')
+            const navList = document.querySelector('nav ul.nav-list')
+
+            // 点击汉堡菜单，显示或隐藏导航菜单
+            hamburgerMenu.addEventListener('click', function () {
+                navList.classList.toggle('show-menu')
+            })
+
+            // 点击页面其他地方时，关闭导航菜单
+            document.addEventListener('click', function (event) {
+                if (!navList.contains(event.target) && !hamburgerMenu.contains(event.target)) {
+                    navList.classList.remove('show-menu')
+                }
+            })
         });
+
 
 
     </script>
