@@ -107,6 +107,7 @@ main {
   text-decoration: none;
   border-radius: 4px;
   margin-top: 20px;
+  margin-bottom: 30px;
 }
 
 .buy-now-button:hover {
