@@ -10,76 +10,138 @@ body {
   line-height: 1.6;
 }
 
-nav {
-  background-color: #333; /* Background color of main navigation */
+/* 基本导航样式 */
+.nav-container {
+  background-color: #333;
   display: flex;
-  justify-content: center; /* Center align items horizontally */
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  padding: 0 20px; /* Add padding for additional width */
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Resetting default list styles */
-nav ul,
-nav ul ul {
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+/* Hide hamburger menu by default */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.hamburger-menu span {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+nav ul.nav-list {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-/* Styling the main navigation */
-nav > ul {
-  background-color: #333; /* Background color of main navigation */
   display: flex;
-  align-items: center; /* Align items vertically */
+  align-items: center;
 }
 
-nav > ul > li {
+nav ul.nav-list li {
   position: relative;
-  margin-right: 20px; /* Add space between items */
+  margin-right: 15px;
 }
 
-nav > ul > li > a {
-  display: block;
-  padding: 12px 20px; /* Adjust padding as needed */
-  color: #fff; /* Text color */
+nav ul.nav-list li a {
   text-decoration: none;
-  position: relative;
-}
-
-/* Logo styling */
-nav .logo {
-  height: 40px; /* Adjust height as needed */
-  width: auto; /* Maintain aspect ratio */
-  margin-right: 20px; /* Space between logo and next item */
-}
-
-nav > ul > li:hover > ul {
+  color: #fff;
+  padding: 12px 20px;
   display: block;
 }
 
-/* Styling the dropdown menu */
-nav > ul > li > ul {
+/* Dropdown menu */
+nav ul.nav-list li ul {
   display: none;
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #444; /* Background color of dropdown menu */
-  min-width: 200px; /* Adjust width as needed */
-  z-index: 1; /* Ensure dropdown is above other content */
+  background-color: #444;
+  min-width: 200px;
+  z-index: 1000;
 }
 
-nav > ul > li > ul > li > a {
+nav ul.nav-list li:hover ul {
   display: block;
-  padding: 10px 15px; /* Adjust padding as needed */
-  color: #fff; /* Text color */
-  text-decoration: none;
 }
 
-nav > ul > li > ul > li > a:hover {
-  background-color: #555; /* Background color on hover */
+nav ul.nav-list li ul li {
+  width: 100%;
+}
+
+nav ul.nav-list li ul li a {
+  padding: 10px 15px;
+  color: #fff;
+}
+
+nav ul.nav-list li ul li a:hover {
+  background-color: #555;
+}
+
+/* Language selector */
+.language-selector select {
+  padding: 5px 10px;
+  font-size: 16px;
+  border: 1px solid #333; /* 自定义边框颜色，去掉白色 */
+  border-radius: 5px;
+  background-color: #333; /* 背景颜色 */
+  color: #fff; /* 文字颜色 */
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: 5px center; /* 调整图标的位置 */
+  background-size: 20px 15px; /* 调整图标的大小 */
+  padding-left: 30px; /* 为图标腾出空间 */
+}
+
+.language-selector select:focus {
+  outline: none;
+  border-color: #333;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: flex;
+  }
+
+  nav ul.nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+    display: none;
+    background-color: #333;
+    width: 100%;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    padding: 10px 0;
+    z-index: 1000;
+  }
+
+  nav ul.nav-list.show-menu {
+    display: flex;
+  }
+
+  nav ul.nav-list li {
+    margin-right: 0;
+    width: 100%;
+  }
+
+  nav ul.nav-list li a {
+    padding: 10px;
+    width: 100%;
+  }
+
+  .nav-container {
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .container-upper {
