@@ -146,10 +146,18 @@
     </div>
     <!-- Footer menu for mobile -->
     <div class="footer-menu">
-        <a href="../index.html" title="Home"><i class="fas fa-home"></i></a>
-        <a href="./LearnMore.html" title="About Us"><i class="fas fa-info-circle"></i></a>
-        <a href="#" title="Products"><i class="fas fa-box"></i></a>
-        <a href="./contact.html" title="Contact Us"><i class="fas fa-envelope"></i></a>
+        <a href="../index.html" title="Home" onclick="clearTitle(this)" onmouseout="restoreTitle(this)">
+            <i class="fas fa-home"></i>
+        </a>
+        <a href="./LearnMore.html" title="About Us" onclick="clearTitle(this)" onmouseout="restoreTitle(this)">
+            <i class="fas fa-info-circle"></i>
+        </a>
+        <a href="./products.html" title="Products" onclick="clearTitle(this)" onmouseout="restoreTitle(this)">
+            <i class="fas fa-box"></i>
+        </a>
+        <a href="#" title="Contact Us" onclick="clearTitle(this)" onmouseout="restoreTitle(this)">
+            <i class="fas fa-envelope"></i>
+        </a>
     </div>
     <script>
         document.getElementById('product-link').addEventListener('click', function (event) {
@@ -188,7 +196,19 @@
                     navList.classList.remove('show-menu')
                 }
             })
-        });
+        })
+
+        // footer menu title的隐藏和显示
+        function clearTitle (link) {
+            link.dataset.title = link.title  // 保存原来的 title
+            link.removeAttribute('title')    // 移除 title
+        }
+
+        function restoreTitle (link) {
+            if (link.dataset.title) {
+                link.setAttribute('title', link.dataset.title)  // 恢复 title
+            }
+        }
 
     </script>
 </body>
