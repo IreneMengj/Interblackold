@@ -76,16 +76,16 @@
             </div>
             <!-- Footer menu for mobile -->
             <div class="footer-menu">
-                <a href="../index.html" title="Home" onclick="clearTitle(this)" onmouseout="restoreTitle(this)">
+                <a href="../index.html" title="Home" onclick="clearTitle(this); toggleActive(this)">
                     <i class="fas fa-home"></i>
                 </a>
-                <a href="./LearnMore.html" title="About Us" onclick="clearTitle(this)" onmouseout="restoreTitle(this)">
+                <a href="./LearnMore.html" title="About Us" onclick="clearTitle(this); toggleActive(this)">
                     <i class="fas fa-info-circle"></i>
                 </a>
-                <a href="./products.html" title="Products" onclick="clearTitle(this)" onmouseout="restoreTitle(this)">
+                <a href="./products.html" title="Products" onclick="clearTitle(this); toggleActive(this)">
                     <i class="fas fa-box"></i>
                 </a>
-                <a href="#" title="Contact Us" onclick="clearTitle(this)" onmouseout="restoreTitle(this)">
+                <a href="#" title="Contact Us" onclick="clearTitle(this); toggleActive(this)">
                     <i class="fas fa-envelope"></i>
                 </a>
             </div>
@@ -143,6 +143,15 @@
             if (link.dataset.title) {
                 link.setAttribute('title', link.dataset.title)  // 恢复 title
             }
+        }
+
+        function toggleActive (link) {
+            // 移除其他链接的 active 类
+            const allLinks = document.querySelectorAll('.footer-menu a')
+            allLinks.forEach(item => item.classList.remove('active'))
+
+            // 为当前点击的链接添加 active 类
+            link.classList.add('active')
         }
     </script>
 </body>

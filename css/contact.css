@@ -283,6 +283,10 @@ nav ul.nav-list li ul li a:hover {
   visibility: visible;
 }
 
+.footer-menu a.active i {
+  color: #007bff; /* 蓝色，或者你想要的其他颜色 */
+}
+
 /* Show footer menu on mobile devices */
 @media (max-width: 768px) {
   .footer-menu {
