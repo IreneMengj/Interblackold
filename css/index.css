@@ -296,6 +296,17 @@ nav ul.nav-list li ul li a:hover {
   transition: transform 0.3s ease;
 }
 
+/* 去掉产品名称的下划线 */
+.product-item a {
+  text-decoration: none; /* 移除下划线 */
+  color: inherit; /* 保持继承的颜色，避免默认的链接颜色 */
+}
+
+.product-item a:hover {
+  text-decoration: none; /* 悬停时也不显示下划线 */
+  color: #007bff; /* 悬停时改变字体颜色 */
+}
+
 .product-item img {
   width: 100%;
   border-radius: 10px;
