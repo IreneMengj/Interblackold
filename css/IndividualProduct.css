@@ -159,6 +159,8 @@ main {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+  max-width: 100%;
 }
 
 .product-image {
@@ -200,15 +202,19 @@ main {
 
 .product-table {
   width: 100%;
-  border-collapse: collapse;
+  max-width: 100%; /* 表格最大宽度限制 */
+  table-layout: fixed; /* 固定表格布局 */
+  border-collapse: collapse; /* 合并表格边框 */
   margin-bottom: 20px;
+  overflow-x: auto; /* 启用水平滚动 */
 }
 
 .product-table th,
 .product-table td {
-  border: 1px solid #ddd;
   padding: 8px;
+  border: 1px solid #ddd; /* 添加表格边框 */
   text-align: left;
+  word-wrap: break-word; /* 自动换行 */
 }
 
 .product-table th {
