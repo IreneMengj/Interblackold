@@ -113,10 +113,29 @@ main {
 .buy-now-button:hover {
   background-color: #0056b3;
 }
+/* Show footer menu on mobile devices */
+@media (max-width: 768px) {
+  /* Adjust product-details layout for mobile */
+  .product-details {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-image {
+    width: 80%; /* Adjust width for mobile, making image take up more space */
+    margin-right: 0; /* Remove margin on right since it's now stacked */
+    margin-bottom: 20px; /* Add margin below the image for spacing */
+  }
+
+  .product-description {
+    width: 90%; /* Adjust width for mobile, making description take up more space */
+    text-align: left; /* Center the text for mobile layout */
+  }
+}
 
 /* Base styles for the footer menu */
 .footer-menu {
-  display: none; /* Hidden by default */
+  display: none; /* Hidden by default on larger screens */
   position: fixed;
   bottom: 0;
   left: 0;
@@ -138,14 +157,15 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 24px; /* Adjust the icon size if needed */
-  line-height: 24px; /* Adjust the line height for vertical centering */
+  font-size: 24px; /* Icon size */
   position: relative; /* For tooltips positioning */
+  font-size: 14px; /* Adjust the font size for the text */
 }
 
 /* Icons inside the footer menu */
 .footer-menu i {
-  font-size: 24px; /* Adjust icon size */
+  font-size: 24px; /* Icon size */
+  margin-bottom: 5px; /* Space between icon and text */
 }
 
 /* Tooltip styles */
@@ -172,33 +192,28 @@ main {
   visibility: visible;
 }
 
+/* Active state for the icons */
+.footer-menu a.active i {
+  color: #007bff; /* Blue color for active icon */
+}
+
 /* Show footer menu on mobile devices */
 @media (max-width: 768px) {
   .footer-menu {
     display: flex;
   }
-
-  /* Adjust product-details layout for mobile */
-  .product-details {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .product-image {
-    width: 80%; /* Adjust width for mobile, making image take up more space */
-    margin-right: 0; /* Remove margin on right since it's now stacked */
-    margin-bottom: 20px; /* Add margin below the image for spacing */
-  }
-
-  .product-description {
-    width: 90%; /* Adjust width for mobile, making description take up more space */
-    text-align: left; /* Center the text for mobile layout */
-  }
 }
 
-/* Adjust styles for footer menu when visible */
+/* Hide footer menu on larger screens */
 @media (min-width: 769px) {
   .footer-menu {
     display: none;
   }
+}
+
+/* Additional styles for text below the icon */
+.footer-menu span {
+  font-size: 12px; /* Adjust text size below the icon */
+  margin-top: 5px; /* Space between the icon and the text */
+  line-height: 1; /* Adjust line height */
 }
