@@ -1,32 +1,149 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
 }
 
 header {
   background-color: #333;
-  padding: 10px;
-  color: white;
-  text-align: center;
+}
+/* 基本导航样式 */
+.nav-container {
+  background-color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-nav ul {
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+/* Hide hamburger menu by default */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.hamburger-menu span {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+nav ul.nav-list {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
+  display: flex;
+  align-items: center;
 }
 
-nav ul li {
-  display: inline;
-  margin: 0 15px;
+nav ul.nav-list li {
+  position: relative;
+  margin-right: 15px;
 }
 
-nav ul li a {
-  color: white;
+nav ul.nav-list li a {
   text-decoration: none;
+  color: #fff;
+  padding: 12px 20px;
+  display: block;
+}
+
+/* Dropdown menu */
+nav ul.nav-list li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #444;
+  min-width: 200px;
+  z-index: 1000;
+}
+
+nav ul.nav-list li:hover ul {
+  display: block;
+}
+
+nav ul.nav-list li ul li {
+  width: 100%;
+}
+
+nav ul.nav-list li ul li a {
+  padding: 10px 15px;
+  color: #fff;
+}
+
+nav ul.nav-list li ul li a:hover {
+  background-color: #555;
+}
+
+/* Language selector */
+.language-selector select {
+  padding: 5px 10px;
+  font-size: 16px;
+  border: 1px solid #333; /* 自定义边框颜色，去掉白色 */
+  border-radius: 5px;
+  background-color: #333; /* 背景颜色 */
+  color: #fff; /* 文字颜色 */
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: 5px center; /* 调整图标的位置 */
+  background-size: 20px 15px; /* 调整图标的大小 */
+  padding-left: 30px; /* 为图标腾出空间 */
+}
+
+.language-selector select:focus {
+  outline: none;
+  border-color: #333;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: flex;
+  }
+
+  nav ul.nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+    display: none;
+    background-color: #333;
+    width: 100%;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    padding: 10px 0;
+    z-index: 1000;
+  }
+
+  nav ul.nav-list.show-menu {
+    display: flex;
+  }
+
+  nav ul.nav-list li {
+    margin-right: 0;
+    width: 100%;
+  }
+
+  nav ul.nav-list li a {
+    padding: 10px;
+    width: 100%;
+  }
+
+  .nav-container {
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 main {

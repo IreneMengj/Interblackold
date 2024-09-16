@@ -7,16 +7,39 @@
   <title>Slide gate - Product Details</title>
   <link rel="stylesheet" href="../css/IndividualProduct.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
 </head>
 
 <body>
   <header>
     <nav>
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="products.html">Product</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+      <div class="nav-container">
+        <img src="../img/logo.jpg" alt="Logo" class="logo">
+        <div class="hamburger-menu" id="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="nav-list">
+          <li><a href="../index.html">Home</a></li>
+          <li>
+            <a href="#" id="product-link">Product</a>
+            <ul>
+              <li><a href="#petroleum-bitumen">Refractory products</a></li>
+              <li><a href="#grain-oil">Oil products</a></li>
+              <li><a href="#refractories">Agricultural products</a></li>
+            </ul>
+          </li>
+          <li><a href="./contact.html">Contact</a></li>
+          <li class="language-selector">
+            <select id="language-select" onchange="changeLanguage(this.value)">
+              <option value="en" data-icon="flag-icon-us" selected>EN</option>
+              <option value="cn" data-icon="flag-icon-cn">CN</option>
+              <option value="ru" data-icon="flag-icon-ru">RU</option>
+            </select>
+          </li>
+        </ul>
+      </div>
     </nav>
   </header>
 
@@ -117,6 +140,44 @@
       </div>
     </a>
   </div>
+
+  <script>
+    // 语言切换
+    document.getElementById('language-select').addEventListener('change', function () {
+      const selectedOption = this.options[this.selectedIndex]
+      const iconClass = selectedOption.getAttribute('data-icon')
+
+      this.className = iconClass // 设置下拉框的图标
+      changeLanguage(this.value) // 切换语言
+    })
+    // 初始加载时设置默认图标
+    document.addEventListener('DOMContentLoaded', function () {
+      const selectElement = document.getElementById('language-select')
+      const selectedOption = selectElement.options[selectElement.selectedIndex]
+      const iconClass = selectedOption.getAttribute('data-icon')
+
+      selectElement.className = iconClass
+    })
+    //控制汉堡菜单
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const hamburgerMenu = document.getElementById('hamburger-menu')
+      const navList = document.querySelector('nav ul.nav-list')
+
+      // 点击汉堡菜单，显示或隐藏导航菜单
+      hamburgerMenu.addEventListener('click', function () {
+        navList.classList.toggle('show-menu')
+      })
+
+      // 点击页面其他地方时，关闭导航菜单
+      document.addEventListener('click', function (event) {
+        if (!navList.contains(event.target) && !hamburgerMenu.contains(event.target)) {
+          navList.classList.remove('show-menu')
+        }
+      })
+    })
+
+  </script>
 </body>
 
 </html>
