@@ -254,6 +254,9 @@ nav ul.nav-list li ul li a:hover {
   z-index: 1000;
   display: flex;
   justify-content: space-around;
+  -webkit-touch-callout: none; /* Prevent callout on long press */
+  -webkit-user-select: none; /* Prevent text selection */
+  user-select: none;
 }
 
 /* Links inside the footer menu */
@@ -262,11 +265,14 @@ nav ul.nav-list li ul li a:hover {
   text-decoration: none;
   padding: 10px 15px;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Ensure icon is always above text */
   align-items: center;
-  font-size: 24px; /* Icon size */
-  position: relative; /* For tooltips positioning */
+  justify-content: center; /* Align text and icon to the center */
   font-size: 14px; /* Adjust the font size for the text */
+  width: 25%; /* Ensures uniform width across devices */
+  box-sizing: border-box; /* Prevents padding from altering width */
+  -webkit-box-flex: 1; /* Compatibility for older iOS versions */
+  flex: 1;
 }
 
 /* Icons inside the footer menu */
@@ -323,4 +329,6 @@ nav ul.nav-list li ul li a:hover {
   font-size: 12px; /* Adjust text size below the icon */
   margin-top: 5px; /* Space between the icon and the text */
   line-height: 1; /* Adjust line height */
+  text-align: center; /* Ensure text is centered */
+  display: block; /* Ensures the text behaves like a block element */
 }
